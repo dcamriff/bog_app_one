@@ -11,5 +11,7 @@ Rails.application.routes.draw do
 
     put "/creatures/:id", to: "creatures#update"
 
+    delete "/creatures/:id", to: "creatures#destroy"
+
   end
 end

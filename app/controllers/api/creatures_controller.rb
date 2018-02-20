@@ -31,6 +31,16 @@ class Api::CreaturesController < ApplicationController
         render json: @creature
     end
 
+    def destroy
+        creature_id = params[:id]
+
+        @creature = Creature.find_by_id(creature_id)
+
+        @creature.destroy
+
+        render json: { msg: "Sucessfully Deleted"}
+    end
+
     private
     def creature_params
         params.require(:creature).permit(:name, :description)
